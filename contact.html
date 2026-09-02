@@ -23,15 +23,15 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="lessons.html">Lesson Notes</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
     <main>
     <section>
-        <h2>Contact Me</h2>
+        <h2>Contact Us</h2>
         <p>Have a question about a lesson, or want to get in touch? Send a message below.</p>
 
-        <form action="https://formspree.io/f/xbgjdjdz" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xbgjdjdz" method="POST">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -40,7 +40,6 @@
 
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" required></textarea>
-            <input type="hidden" name="_next" value="https://captainace77.github.io/teacher-site/thanks.html">
             <button type="submit">Send Message</button>
         </form>
     </section>
