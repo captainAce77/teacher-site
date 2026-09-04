@@ -33,3 +33,25 @@ if (contactForm) {
         });
     });
 }
+
+const searchInput = document.getElementById("lesson-search");
+
+if (searchInput) {
+    searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase();
+        const items = document.querySelectorAll(".lesson-item");
+        const blocks = document.querySelectorAll(".subject-block");
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const subjectHeading = item.closest(".subject-block").querySelector("h3").textContent.toLowerCase();
+            const matches = text.includes(query) || subjectHeading.includes(query);
+            item.style.display = matches ? "" : "none";
+        });
+
+        blocks.forEach(block => {
+            const visibleItems = block.querySelectorAll(".lesson-item:not([style*='display: none'])");
+            block.style.display = visibleItems.length > 0 ? "" : "none";
+        });
+    });
+}
