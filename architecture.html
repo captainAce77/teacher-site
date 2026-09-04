@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Captain Ace Academy — Site Architecture</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        color: #1a2744;
+        margin-bottom: 0.25rem;
+    }
+    p.sub {
+        color: #5a6578;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    .card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        max-width: 720px;
+        width: 100%;
+    }
+    svg { width: 100%; height: auto; display: block; }
+    text { font-family: Arial, sans-serif; }
+    .th { font-size: 14px; font-weight: bold; }
+    .ts { font-size: 12px; }
+    .box-gray { fill: #eceef2; stroke: #8a94a6; }
+    .box-teal { fill: #e1f5ee; stroke: #1d9e75; }
+    .box-purple { fill: #eeedfe; stroke: #7f77dd; }
+    .box-blue { fill: #e6f1fb; stroke: #378add; }
+    .box-coral { fill: #faece7; stroke: #d85a30; }
+    .text-gray { fill: #444441; }
+    .text-teal { fill: #085041; }
+    .text-purple { fill: #3c3489; }
+    .text-blue { fill: #0c447c; }
+    .text-coral { fill: #993c1d; }
+    .arr { stroke: #8a94a6; stroke-width: 1.5; fill: none; }
+    footer {
+        margin-top: 1.5rem;
+        color: #8a94a6;
+        font-size: 13px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<h1>Captain Ace Academy</h1>
+<p class="sub">Site architecture — from local dev to live deployment</p>
+
+<div class="card">
+<svg viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="#8a94a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<g class="box-gray"><rect x="220" y="20" width="240" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-gray" x="340" y="42" text-anchor="middle" dominant-baseline="central">Your computer</text>
+<text class="ts text-gray" x="340" y="60" text-anchor="middle" dominant-baseline="central">VS Code + git</text>
+<line x1="340" y1="76" x2="340" y2="110" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-gray"><rect x="230" y="110" width="220" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-gray" x="340" y="132" text-anchor="middle" dominant-baseline="central">GitHub repository</text>
+<text class="ts text-gray" x="340" y="150" text-anchor="middle" dominant-baseline="central">git push</text>
+
+<path d="M340 166 L340 185 L210 185 L210 200" class="arr" marker-end="url(#arrow)"/>
+<path d="M340 166 L340 185 L450 185 L450 200" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-teal"><rect x="120" y="200" width="180" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-teal" x="210" y="222" text-anchor="middle" dominant-baseline="central">GitHub Pages</text>
+<text class="ts text-teal" x="210" y="240" text-anchor="middle" dominant-baseline="central">Static hosting</text>
+
+<g class="box-teal"><rect x="360" y="200" width="180" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-teal" x="450" y="222" text-anchor="middle" dominant-baseline="central">Netlify</text>
+<text class="ts text-teal" x="450" y="240" text-anchor="middle" dominant-baseline="central">Static hosting + 404</text>
+
+<path d="M210 256 L210 275 L320 275 L320 290" class="arr" marker-end="url(#arrow)"/>
+<path d="M450 256 L450 275 L320 275 L320 290" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-purple"><rect x="190" y="290" width="260" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-purple" x="320" y="312" text-anchor="middle" dominant-baseline="central">Live site</text>
+<text class="ts text-purple" x="320" y="330" text-anchor="middle" dominant-baseline="central">Home, Lessons, About, Contact, 404</text>
+
+<path d="M320 346 L320 365 L210 365 L210 380" class="arr" marker-end="url(#arrow)"/>
+<path d="M320 346 L320 365 L450 365 L450 380" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-blue"><rect x="120" y="380" width="180" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-blue" x="210" y="402" text-anchor="middle" dominant-baseline="central">Lesson downloads</text>
+<text class="ts text-blue" x="210" y="420" text-anchor="middle" dominant-baseline="central">Files folder in repo</text>
+
+<g class="box-coral"><rect x="360" y="380" width="180" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-coral" x="450" y="402" text-anchor="middle" dominant-baseline="central">Contact form</text>
+<text class="ts text-coral" x="450" y="420" text-anchor="middle" dominant-baseline="central">fetch() + JavaScript</text>
+
+<path d="M450 436 L450 455 L340 455 L340 470" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-coral"><rect x="240" y="470" width="200" height="56" rx="8" stroke-width="1"/></g>
+<text class="th text-coral" x="340" y="492" text-anchor="middle" dominant-baseline="central">Formspree</text>
+<text class="ts text-coral" x="340" y="510" text-anchor="middle" dominant-baseline="central">Forwards submission</text>
+<line x1="340" y1="526" x2="340" y2="560" class="arr" marker-end="url(#arrow)"/>
+
+<g class="box-coral"><rect x="240" y="560" width="200" height="44" rx="8" stroke-width="1"/></g>
+<text class="th text-coral" x="340" y="582" text-anchor="middle" dominant-baseline="central">Your inbox</text>
+</svg>
+</div>
+
+<footer>Captain Ace Academy — captainaceacademy.netlify.app</footer>
+</body>
+</html>
