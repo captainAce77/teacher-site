@@ -259,3 +259,19 @@ td input {
     opacity: 0.4;
     cursor: not-allowed;
 }
+
+.review-item {
+    border: 1px solid var(--color-nav-text);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.review-wrong {
+    color: #c0392b;
+}
+
+.review-correct {
+    color: #1d9e75;
+    font-weight: bold;
+}
