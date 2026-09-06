@@ -177,3 +177,54 @@ button {
 button:hover {
     background-color: var(--color-hover);
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+th, td {
+    border: 1px solid var(--color-nav-text);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th {
+    background-color: var(--color-navy);
+    color: var(--color-on-dark);
+}
+
+td input {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid var(--color-nav-text);
+    border-radius: 4px;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+}
+
+.remove-row-btn {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+
+.ca-selectors {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.ca-selectors select {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-nav-text);
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+}
