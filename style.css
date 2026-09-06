@@ -1,3 +1,27 @@
+:root {
+    --color-navy: #1a2744;
+    --color-blue: #3b6fd4;
+    --color-bg: #f4f6fb;
+    --color-text: #222222;
+    --color-card-bg: #ffffff;
+    --color-nav-text: #cdd6e8;
+    --color-on-dark: #ffffff;
+    --color-hover: #0d1626;
+    --color-heading: #1a2744;
+}
+
+[data-theme="dark"] {
+    --color-navy: #0d1626;
+    --color-blue: #4a7fe0;
+    --color-bg: #12192b;
+    --color-text: #e4e8f0;
+    --color-card-bg: #1b2438;
+    --color-nav-text: #a9b6d0;
+    --color-on-dark: #ffffff;
+    --color-hover: #000000;
+    --color-heading: #8fb4f5;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,22 +31,25 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #222;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 header {
-    background-color: #1a2744;
-    color: #ffffff;
+    background-color: var(--color-navy);
+    color: var(--color-on-dark);
     padding: 2rem 1rem;
     text-align: center;
 }
 
 header p {
-    color: #cdd6e8;
+    color: var(--color-nav-text);
 }
 
 nav {
-    background-color: #3b6fd4;
+    background-color: var(--color-blue);
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -30,17 +57,27 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex: 1;
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--color-on-dark);
     text-decoration: none;
     display: block;
     padding: 1rem;
 }
 
 nav a:hover {
-    background-color: #1a2744;
+    background-color: var(--color-hover);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-on-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
 }
 
 main {
@@ -54,8 +91,8 @@ main section {
 }
 
 main h2 {
-    color: #1a2744;
-    border-bottom: 2px solid #3b6fd4;
+    color: var(--color-heading);
+    border-bottom: 2px solid var(--color-blue);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -69,19 +106,19 @@ main li {
 }
 
 footer {
-    background-color: #1a2744;
-    color: #cdd6e8;
+    background-color: var(--color-navy);
+    color: var(--color-on-dark);
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: 3rem;
 }
 
 footer a {
-    color: #ffffff;
+    color: var(--color-on-dark);
 }
 
 nav a.active {
-    background-color: #1a2744;
+    background-color: var(--color-navy);
     font-weight: bold;
 }
 
@@ -113,21 +150,23 @@ form {
 label {
     margin-top: 1rem;
     font-weight: bold;
-    color: #1a2744;
+    color: var(--color-heading);
 }
 
 input, textarea {
     padding: 0.5rem;
     margin-top: 0.3rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-nav-text);
     border-radius: 4px;
     font-family: inherit;
+    color: var(--color-text);
+    background-color: var(--color-card-bg);
 }
 
 button {
     margin-top: 1.5rem;
     padding: 0.75rem;
-    background-color: #3b6fd4;
+    background-color: var(--color-blue);
     color: white;
     border: none;
     border-radius: 4px;
@@ -136,5 +175,5 @@ button {
 }
 
 button:hover {
-    background-color: #1a2744;
+    background-color: var(--color-hover);
 }
