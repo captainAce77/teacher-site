@@ -228,3 +228,34 @@ td input {
     background-color: var(--color-card-bg);
     color: var(--color-text);
 }
+
+.quiz-question-text {
+    font-weight: bold;
+    color: var(--color-heading);
+    margin-bottom: 1rem;
+}
+
+.quiz-option {
+    display: block;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--color-nav-text);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background-color: var(--color-bg);
+}
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.quiz-nav button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

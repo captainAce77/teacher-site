@@ -267,3 +267,4 @@ if (sortTotalBtn) {
         rebuildTable(data);
     });
 }
+
