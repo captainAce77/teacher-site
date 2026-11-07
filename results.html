@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Teacher Results | Captain Ace Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>🎓 Captain Ace Academy</h1>
+        <p>Teacher Results</p>
+    </header>
+
+    <main>
+        <section id="teacher-login">
+            <h2>Teacher login</h2>
+            <p id="teacher-error" class="review-wrong"></p>
+            <form id="teacher-form">
+                <label for="teacher-email">Email</label>
+                <input type="email" id="teacher-email" required>
+                <label for="teacher-password">Password</label>
+                <input type="password" id="teacher-password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </section>
+
+        <section id="results-section" style="display:none">
+            <h2>Student results</h2>
+            <p id="results-count"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>PIN</th><th>Subject</th><th>Topic</th><th>Score</th><th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+            <button id="teacher-logout" type="button">Log out</button>
+        </section>
+    </main>
+
+    <footer><p>Captain Ace Academy</p></footer>
+    <script type="module" src="results.js"></script>
+</body>
+</html>
