@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | Captain Ace Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>🎓 Captain Ace Academy</h1>
+        <p>Student Login</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enter your PIN</h2>
+            <p id="login-error" class="review-wrong"></p>
+
+            <form id="login-form">
+                <label for="pin-input">6-digit PIN</label>
+                <input type="password" id="pin-input" maxlength="6" pattern="[0-9]{6}" required inputmode="numeric">
+                <button type="submit">Log In</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Captain Ace Academy</p>
+    </footer>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

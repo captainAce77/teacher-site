@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Khadija</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A letter, just for you.">
+<meta property="og:title" content="For Khadija">
+<meta property="og:description" content="Something I wrote, just for you.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕊️</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg1: #fbeff3; --bg2: #f3d9e3; --ink: #3b1f3a; --accent: #b5476e;
+  --gold: #a8743f; --star: #c98aa3; --heart: #d4668a;
+  --btn-bg: #3b1f3a; --btn-ink: #fbeff3;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg1: #150c2b; --bg2: #2a1236; --ink: #f6e6ee; --accent: #f0a9bf;
+    --gold: #e0bd8a; --star: #fff3d6; --heart: #f08aa8;
+    --btn-bg: #f0a9bf; --btn-ink: #2a1236;
+  }
+}
+:root[data-theme="dark"] {
+  --bg1: #150c2b; --bg2: #2a1236; --ink: #f6e6ee; --accent: #f0a9bf;
+  --gold: #e0bd8a; --star: #fff3d6; --heart: #f08aa8;
+  --btn-bg: #f0a9bf; --btn-ink: #2a1236;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--bg1);
+  background-image: radial-gradient(ellipse at 50% 0%, var(--bg2), var(--bg1) 70%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+#sky { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.star {
+  position: absolute; border-radius: 50%; background: var(--star);
+  opacity: .15; animation: twinkle 4s ease-in-out infinite;
+}
+@keyframes twinkle { 50% { opacity: .85; } }
+.heart {
+  position: fixed; bottom: -2rem; color: var(--heart); opacity: 0;
+  pointer-events: none; z-index: 1; animation: rise 9s linear forwards;
+}
+@keyframes rise {
+  10% { opacity: .55; }
+  100% { transform: translateY(-110vh) rotate(18deg); opacity: 0; }
+}
+main { position: relative; z-index: 2; max-width: 34rem; margin: 0 auto; padding: 0 1.5rem; }
+.cover {
+  min-height: 100dvh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; gap: 1rem;
+}
+.cover h1 {
+  font-family: "Pinyon Script", cursive; font-weight: 400;
+  font-size: clamp(3.4rem, 15vw, 5.4rem); line-height: 1.1; margin: 0; color: var(--accent);
+}
+.cover p { margin: 0; font-style: italic; max-width: 22rem; }
+button {
+  font: inherit; font-size: 1.15rem; cursor: pointer; border: 0; border-radius: 999px;
+  padding: .7rem 1.8rem; background: var(--btn-bg); color: var(--btn-ink);
+  transition: transform .25s ease, opacity .25s ease;
+}
+button:hover { transform: translateY(-2px); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+#letter { display: none; padding: 20dvh 0 25dvh; text-align: center; }
+#letter .greet {
+  font-family: "Pinyon Script", cursive; font-size: clamp(2.6rem, 11vw, 3.8rem);
+  color: var(--accent); margin: 0 0 2rem; line-height: 1.2;
+}
+.line { margin: 0 0 1.9rem; opacity: 0; transform: translateY(10px); transition: opacity 1.8s ease, transform 1.8s ease; }
+.line.show { opacity: 1; transform: none; }
+.line em { color: var(--gold); }
+.sign { font-family: "Pinyon Script", cursive; font-size: 2.4rem; color: var(--accent); line-height: 1.3; }
+#ask { margin-top: 2.5rem; min-height: 9rem; position: relative; opacity: 0; transition: opacity 1.8s ease; }
+#ask.show { opacity: 1; }
+.choices { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+#no { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+#reply { margin-top: 1.5rem; font-style: italic; }
+#photo-wrap { display: none; margin: 2rem auto 0; max-width: 20rem; opacity: 0; transition: opacity 2.2s ease; }
+#photo-wrap.show { opacity: 1; }
+#photo-wrap img { display: block; width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 12px 40px rgba(0,0,0,.28); }
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none; opacity: .5; }
+  .line, #ask, #photo-wrap { transition: none; }
+}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main>
+  <section class="cover" id="cover">
+    <h1>For Khadija</h1>
+    <p>Something I wrote, just for you.</p>
+    <button id="open" type="button">Open your letter</button>
+  </section>
+
+  <section id="letter" aria-live="polite">
+    <p class="greet">My Peace,</p>
+    <div id="lines"></div>
+    <div id="ask">
+      <div class="choices">
+        <button id="yes" type="button">Yes, you are</button>
+        <button id="no" type="button">Not yet</button>
+      </div>
+      <figure id="photo-wrap" style="margin-left:auto;margin-right:auto">
+        <img id="photo" src="us.jpg" alt="The two of us">
+      </figure>
+      <p id="reply"></p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var lines = [
+    "You always say I’m not romantic.",
+    "So I sat down in the quiet and went looking for the right words, and found that every one of them was already you.",
+    "A message on a screen, a hello on Facebook, and somehow it became the gentlest, best thing that ever happened to me.",
+    "Then came the morning we met by surprise, on my way to work. You were nervous, shy and caught off guard, and we spoke for barely a minute while you kept your face covered the whole time. I walked on smiling, because even that one shy minute made the whole morning brighter.",
+    "Some people search the whole world for calm. I only had to find you.",
+    "Your eyes. I could write a thousand poems and still fall short of them. They hold the stillness of a moonlit night and the warmth of the first light of morning. When you look at me, the whole world goes quiet, and I remember what <em>peace</em> feels like.",
+    "And your beauty, it’s a sunrise I never get tired of. It lives in your face, yes, but also in the way you make ordinary days feel soft.",
+    "So tell me, my love, am I romantic now?"
+  ];
+
+  // Stars
+  var sky = document.getElementById("sky");
+  for (var i = 0; i < 70; i++) {
+    var s = document.createElement("span");
+    s.className = "star";
+    var size = Math.random() * 2.5 + 1;
+    s.style.cssText = "left:" + Math.random() * 100 + "%;top:" + Math.random() * 100 +
+      "%;width:" + size + "px;height:" + size + "px;animation-delay:" + Math.random() * 4 + "s";
+    sky.appendChild(s);
+  }
+
+  // Floating hearts
+  function heart() {
+    var h = document.createElement("span");
+    h.className = "heart";
+    h.textContent = "♥";
+    h.style.left = Math.random() * 95 + "vw";
+    h.style.fontSize = (Math.random() * 14 + 12) + "px";
+    document.body.appendChild(h);
+    setTimeout(function () { h.remove(); }, 9500);
+  }
+
+  var cover = document.getElementById("cover");
+  var letter = document.getElementById("letter");
+  var box = document.getElementById("lines");
+  var ask = document.getElementById("ask");
+
+  function reveal(p) {
+    p.classList.add("show");
+    if (!reduce) p.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function write(i) {
+    if (i >= lines.length) {
+      setTimeout(function () {
+        ask.classList.add("show");
+        if (!reduce) ask.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, reduce ? 0 : 1800);
+      return;
+    }
+    var p = document.createElement("p");
+    p.className = "line";
+    p.innerHTML = lines[i];
+    box.appendChild(p);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { reveal(p); }); });
+    var wait = reduce ? 0 : Math.max(3200, lines[i].length * 55);
+    setTimeout(function () { write(i + 1); }, wait);
+  }
+
+  document.getElementById("open").addEventListener("click", function () {
+    cover.style.display = "none";
+    letter.style.display = "block";
+    window.scrollTo(0, 0);
+    if (!reduce) { setInterval(heart, 1500); heart(); }
+    setTimeout(function () { write(0); }, 600);
+  });
+
+  // The playful ending
+  var no = document.getElementById("no");
+  function dodge() {
+    var x = (Math.random() - 0.5) * 160, y = (Math.random() - 0.5) * 90;
+    no.style.transform = "translate(" + x + "px," + y + "px)";
+  }
+  no.addEventListener("pointerenter", dodge);
+  no.addEventListener("click", dodge);
+
+  var photoWrap = document.getElementById("photo-wrap");
+  document.getElementById("photo").addEventListener("error", function () { photoWrap.remove(); });
+
+  document.getElementById("yes").addEventListener("click", function () {
+    photoWrap.style.display = "block";
+    requestAnimationFrame(function () { requestAnimationFrame(function () { photoWrap.classList.add("show"); }); });
+    document.getElementById("reply").innerHTML =
+      "Then let me keep proving it, my Peace, one poem at a time, for as long as you’ll let me.<br><span class=\"sign\">Yours, always, Yusuf</span>";
+    no.style.display = "none";
+    if (!reduce) for (var k = 0; k < 8; k++) setTimeout(heart, k * 180);
+  });
+})();
+</script>
+</body>
+</html>

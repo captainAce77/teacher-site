@@ -102,10 +102,10 @@ function createStudentRow(data = {}) {
     const row = document.createElement("tr");
     row.innerHTML = `
         <td><input type="text" class="student-name" placeholder="Name" value="${data.name || ""}"></td>
-        <td><input type="number" class="ca1" min="0" max="10" value="${data.ca1 ?? ""}"></td>
-        <td><input type="number" class="ca2" min="0" max="10" value="${data.ca2 ?? ""}"></td>
-        <td><input type="number" class="assignment" min="0" max="10" value="${data.assignment ?? ""}"></td>
-        <td><input type="number" class="exam" min="0" max="70" value="${data.exam ?? ""}"></td>
+        <td><input type="number" class="ca1" min="0" max="15" value="${data.ca1 ?? ""}"></td>
+        <td><input type="number" class="ca2" min="0" max="15" value="${data.ca2 ?? ""}"></td>
+        <td><input type="number" class="ca3" min="0" max="30" value="${data.ca3 ?? ""}"></td>
+        <td><input type="number" class="exam" min="0" max="40" value="${data.exam ?? ""}"></td>
         <td class="total-cell">${data.total || 0}</td>
         <td class="grade-cell">${data.grade || "-"}</td>
         <td><button class="remove-row-btn">Remove</button></td>
@@ -122,7 +122,7 @@ function saveData() {
             name: row.querySelector(".student-name").value,
             ca1: row.querySelector(".ca1").value,
             ca2: row.querySelector(".ca2").value,
-            assignment: row.querySelector(".assignment").value,
+            ca3: row.querySelector(".ca3").value,
             exam: row.querySelector(".exam").value,
             total: row.querySelector(".total-cell").textContent,
             grade: row.querySelector(".grade-cell").textContent
@@ -158,7 +158,7 @@ if (addRowBtn && tableBody) {
     tableBody.addEventListener("input", function (event) {
         const row = event.target.closest("tr");
 
-        if (event.target.matches(".ca1, .ca2, .assignment, .exam")) {
+        if (event.target.matches(".ca1, .ca2, .ca3, .exam")) {
             const input = event.target;
             const max = parseFloat(input.max);
             const min = parseFloat(input.min);
@@ -172,9 +172,9 @@ if (addRowBtn && tableBody) {
 
             const ca1 = parseFloat(row.querySelector(".ca1").value) || 0;
             const ca2 = parseFloat(row.querySelector(".ca2").value) || 0;
-            const assignment = parseFloat(row.querySelector(".assignment").value) || 0;
+            const ca3 = parseFloat(row.querySelector(".ca3").value) || 0;
             const exam = parseFloat(row.querySelector(".exam").value) || 0;
-            const total = ca1 + ca2 + assignment + exam;
+            const total = ca1 + ca2 + ca3 + exam;
 
             row.querySelector(".total-cell").textContent = total;
             row.querySelector(".grade-cell").textContent = calculateGrade(total);
@@ -202,12 +202,12 @@ if (exportBtn) {
             const name = row.querySelector(".student-name").value;
             const ca1 = row.querySelector(".ca1").value;
             const ca2 = row.querySelector(".ca2").value;
-            const assignment = row.querySelector(".assignment").value;
+            const ca3 = row.querySelector(".ca3").value;
             const exam = row.querySelector(".exam").value;
             const total = row.querySelector(".total-cell").textContent;
             const grade = row.querySelector(".grade-cell").textContent;
 
-            csv += `"${name}",${ca1},${ca2},${assignment},${exam},${total},${grade}\n`;
+            csv += `"${name}",${ca1},${ca2},${ca3},${exam},${total},${grade}\n`;
         });
 
         const blob = new Blob([csv], { type: "text/csv" });
@@ -234,7 +234,7 @@ function getRowData() {
             name: row.querySelector(".student-name").value,
             ca1: row.querySelector(".ca1").value,
             ca2: row.querySelector(".ca2").value,
-            assignment: row.querySelector(".assignment").value,
+            ca3: row.querySelector(".ca3").value,
             exam: row.querySelector(".exam").value,
             total: row.querySelector(".total-cell").textContent,
             grade: row.querySelector(".grade-cell").textContent
