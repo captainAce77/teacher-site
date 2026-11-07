@@ -161,6 +161,15 @@ function submitQuiz() {
 
     document.getElementById("retake-btn").addEventListener("click", startQuiz);
     document.getElementById("review-btn").addEventListener("click", showReview);
+
+    window.dispatchEvent(new CustomEvent("quiz-finished", {
+    detail: {
+        subject: quizSubjectSelect.value,
+        topic: quizTopicSelect.value,
+        score: score,
+        total: currentQuestions.length
+    }
+}));
 }
 
 function showReview() {

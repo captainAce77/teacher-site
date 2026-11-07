@@ -13,7 +13,7 @@ loginForm.addEventListener("submit", function (event) {
 
     signInWithEmailAndPassword(auth, email, pin)
         .then(() => {
-            window.location.href = "quiz.html";
+            window.location.href = "ca-quiz.html";
         })
         .catch(() => {
             loginError.textContent = "Incorrect PIN. Please try again.";
